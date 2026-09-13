@@ -1,0 +1,6 @@
+@SecurityMonitoringAI.API_HostAddress = http://localhost:5149
+
+GET {{SecurityMonitoringAI.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
