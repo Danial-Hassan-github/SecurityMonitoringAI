@@ -5,41 +5,6 @@
   color: #e5e7eb;
 }
 
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.dashboard-header h1 {
-  margin: 0;
-  font-size: 28px;
-}
-
-.dashboard-header p {
-  margin-top: 8px;
-  color: #94a3b8;
-}
-
-.status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #94a3b8;
-  font-size: 14px;
-}
-
-.status-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #22c55e;
-}
-
-
-/* Statistics */
-
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -81,9 +46,6 @@
   color: #facc15;
 }
 
-
-/* Main content */
-
 .content-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -115,9 +77,6 @@ mat-card-subtitle {
   color: #64748b !important;
 }
 
-
-/* Chart */
-
 .chart-placeholder {
   height: 220px;
   margin-top: 20px;
@@ -139,9 +98,6 @@ mat-card-subtitle {
   height: 190px;
   display: block;
 }
-
-
-/* Threats */
 
 .threat-panel {
   display: flex;
@@ -166,9 +122,6 @@ mat-card-subtitle {
 .threat-item strong {
   color: #e5e7eb;
 }
-
-
-/* Incidents */
 
 .incidents-panel {
   margin-bottom: 24px;
@@ -269,9 +222,6 @@ mat-card-subtitle {
   background: #052e16;
   color: #4ade80;
 }
-
-
-/* Responsive */
 
 @media (max-width: 900px) {
 

@@ -20,9 +20,6 @@
   color: #e5e7eb;
 }
 
-
-/* Search */
-
 .search {
   width: 380px;
   height: 38px;
@@ -79,9 +76,6 @@
   font-size: 11px;
 }
 
-
-/* Actions */
-
 .topbar-actions {
   display: flex;
   align-items: center;
@@ -104,9 +98,6 @@
 
   background: #1e293b;
 }
-
-
-/* Environment */
 
 .environment {
   display: flex;
