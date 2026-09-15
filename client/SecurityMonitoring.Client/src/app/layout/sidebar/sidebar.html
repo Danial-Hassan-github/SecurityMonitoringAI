@@ -1,0 +1,110 @@
+<aside class="sidebar">
+
+  <div class="brand">
+    <div class="brand-icon">
+      <mat-icon>security</mat-icon>
+    </div>
+
+    <div>
+      <h2>Security Monitor</h2>
+      <span>SOC Platform</span>
+    </div>
+  </div>
+
+
+  <nav class="navigation">
+
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">
+
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+
+    </a>
+
+
+    <div class="section-title">
+      MONITORING
+    </div>
+
+
+    <a
+      routerLink="/security-events"
+      routerLinkActive="active">
+
+      <mat-icon>list_alt</mat-icon>
+      <span>Security Events</span>
+
+    </a>
+
+
+    <a
+      routerLink="/incidents"
+      routerLinkActive="active">
+
+      <mat-icon>warning</mat-icon>
+      <span>Incidents</span>
+
+      <span class="badge">4</span>
+
+    </a>
+
+
+    <a
+      routerLink="/threats"
+      routerLinkActive="active">
+
+      <mat-icon>gpp_bad</mat-icon>
+      <span>Threats</span>
+
+    </a>
+
+
+    <div class="section-title">
+      ANALYSIS
+    </div>
+
+
+    <a
+      routerLink="/ai-analysis"
+      routerLinkActive="active">
+
+      <mat-icon>psychology</mat-icon>
+      <span>AI Analysis</span>
+
+    </a>
+
+
+    <div class="section-title">
+      SYSTEM
+    </div>
+
+
+    <a
+      routerLink="/settings"
+      routerLinkActive="active">
+
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+
+    </a>
+
+  </nav>
+
+
+  <div class="sidebar-footer">
+
+    <div class="system-status">
+      <span class="status-dot"></span>
+
+      <div>
+        <strong>System Operational</strong>
+        <small>All services running</small>
+      </div>
+    </div>
+
+  </div>
+
+</aside>

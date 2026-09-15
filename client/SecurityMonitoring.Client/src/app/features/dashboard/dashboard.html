@@ -12,136 +12,193 @@
     </div>
   </header>
 
+
+  <!-- Statistics -->
   <section class="stats-grid">
 
     @for (stat of stats; track stat.label) {
-    <div class="stat-card" [class]="stat.type">
+      <mat-card class="stat-card" [class]="stat.type">
 
-      <div class="stat-label">
-        {{ stat.label }}
-      </div>
+        <mat-card-content>
+          <div class="stat-label">
+            {{ stat.label }}
+          </div>
 
-      <div class="stat-value">
-        {{ stat.value }}
-      </div>
+          <div class="stat-value">
+            {{ stat.value }}
+          </div>
+        </mat-card-content>
 
-    </div>
+      </mat-card>
     }
 
   </section>
 
+
+  <!-- Activity + Threat Summary -->
   <section class="content-grid">
 
-    <div class="panel activity-panel">
+    <mat-card class="panel activity-panel">
 
-      <div class="panel-header">
-        <div>
-          <h2>Security Activity</h2>
-          <p>Events detected over the last 24 hours</p>
+      <mat-card-header>
+        <mat-card-title>Security Activity</mat-card-title>
+        <mat-card-subtitle>
+          Events detected over the last 24 hours
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <div class="chart-placeholder">
+
+          <svg
+            class="security-chart"
+            viewBox="0 0 800 220"
+            preserveAspectRatio="none">
+
+            <polyline
+              points="0,165 80,145 160,155 240,95 320,120 400,65 480,105 560,45 640,80 720,30 800,55"
+              fill="none"
+              stroke="#38bdf8"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+
+            <polyline
+              points="0,165 80,145 160,155 240,95 320,120 400,65 480,105 560,45 640,80 720,30 800,55"
+              fill="none"
+              stroke="#38bdf8"
+              stroke-width="12"
+              opacity="0.08"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+
+          </svg>
+
         </div>
-      </div>
 
-      <svg class="security-chart" viewBox="0 0 800 220" preserveAspectRatio="none">
+      </mat-card-content>
 
-        <polyline points="0,165 80,145 160,155 240,95 320,120 400,65 480,105 560,45 640,80 720,30 800,55" fill="none"
-          stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </mat-card>
 
-        <polyline points="0,165 80,145 160,155 240,95 320,120 400,65 480,105 560,45 640,80 720,30 800,55" fill="none"
-          stroke="#38bdf8" stroke-width="12" opacity="0.08" stroke-linecap="round" stroke-linejoin="round" />
 
-      </svg>
+    <mat-card class="panel threat-panel">
 
-    </div>
+      <mat-card-header>
+        <mat-card-title>Threat Summary</mat-card-title>
+        <mat-card-subtitle>
+          Current threat distribution
+        </mat-card-subtitle>
+      </mat-card-header>
 
-    <div class="panel threat-panel">
+      <mat-card-content>
 
-      <div class="panel-header">
-        <div>
-          <h2>Threat Summary</h2>
-          <p>Current threat distribution</p>
+        <div class="threat-item">
+          <span>Critical</span>
+          <strong>4</strong>
         </div>
-      </div>
 
-      <div class="threat-item">
-        <span>Critical</span>
-        <strong>4</strong>
-      </div>
+        <div class="threat-item">
+          <span>High</span>
+          <strong>12</strong>
+        </div>
 
-      <div class="threat-item">
-        <span>High</span>
-        <strong>12</strong>
-      </div>
+        <div class="threat-item">
+          <span>Medium</span>
+          <strong>31</strong>
+        </div>
 
-      <div class="threat-item">
-        <span>Medium</span>
-        <strong>31</strong>
-      </div>
+        <div class="threat-item">
+          <span>Low</span>
+          <strong>56</strong>
+        </div>
 
-      <div class="threat-item">
-        <span>Low</span>
-        <strong>56</strong>
-      </div>
+      </mat-card-content>
 
-    </div>
+    </mat-card>
 
   </section>
 
-  <section class="panel incidents-panel">
 
-    <div class="panel-header">
-      <div>
-        <h2>Recent Incidents</h2>
-        <p>Highest priority security incidents</p>
-      </div>
+  <!-- Recent Incidents -->
+  <mat-card class="panel incidents-panel">
 
-      <button>View All</button>
-    </div>
+    <mat-card-header>
 
+      <div class="panel-header-content">
 
-    <div class="incident-list">
-
-      @for (incident of incidents; track incident.title) {
-
-      <div class="incident">
-
-        <div class="incident-info">
-
-          <div class="severity-dot" [class]="incident.severity.toLowerCase()">
-          </div>
-
-          <div>
-            <h3>{{ incident.title }}</h3>
-
-            <p>
-              Source: {{ incident.source }}
-              · {{ incident.time }}
-            </p>
-          </div>
-
+        <div>
+          <mat-card-title>Recent Incidents</mat-card-title>
+          <mat-card-subtitle>
+            Highest priority security incidents
+          </mat-card-subtitle>
         </div>
 
-        <div class="incident-risk">
-
-          <span>Risk Score</span>
-
-          <strong>
-            {{ incident.risk }}
-          </strong>
-
-        </div>
-
-        <div class="severity" [class]="incident.severity.toLowerCase()">
-
-          {{ incident.severity }}
-
-        </div>
+        <button
+          mat-stroked-button
+          type="button">
+          View All
+        </button>
 
       </div>
 
-      }
+    </mat-card-header>
 
-    </div>
 
-  </section>
+    <mat-card-content>
+
+      <div class="incident-list">
+
+        @for (incident of incidents; track incident.title) {
+
+          <div class="incident">
+
+            <div class="incident-info">
+
+              <div
+                class="severity-dot"
+                [class]="incident.severity.toLowerCase()">
+              </div>
+
+              <div>
+                <h3>{{ incident.title }}</h3>
+
+                <p>
+                  Source: {{ incident.source }}
+                  · {{ incident.time }}
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="incident-risk">
+
+              <span>Risk Score</span>
+
+              <strong>
+                {{ incident.risk }}
+              </strong>
+
+            </div>
+
+
+            <div
+              class="severity"
+              [class]="incident.severity.toLowerCase()">
+
+              {{ incident.severity }}
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
 
 </div>
