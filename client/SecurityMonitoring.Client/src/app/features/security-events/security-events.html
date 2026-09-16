@@ -1,1 +1,146 @@
-<p>security-events works!</p>
+<div class="security-events">
+
+    <mat-card class="events-card">
+
+        <mat-card-content>
+
+            <div class="toolbar">
+
+                <div class="search-box">
+                    <mat-icon>search</mat-icon>
+
+                    <input type="text" placeholder="Search events, IPs, users..." (input)="searchEvents($event)" />
+
+                    <span class="search-shortcut">/</span>
+                </div>
+
+
+                <button class="filter-button" mat-stroked-button type="button">
+
+                    <mat-icon>tune</mat-icon>
+                    Filters
+
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table mat-table [dataSource]="filteredEvents">
+
+
+                    <!-- Time -->
+
+                    <ng-container matColumnDef="time">
+
+                        <th mat-header-cell *matHeaderCellDef>
+                            Time
+                        </th>
+
+                        <td mat-cell *matCellDef="let event">
+                            {{ event.time }}
+                        </td>
+
+                    </ng-container>
+
+
+                    <!-- Event -->
+
+                    <ng-container matColumnDef="event">
+
+                        <th mat-header-cell *matHeaderCellDef>
+                            Event
+                        </th>
+
+                        <td mat-cell *matCellDef="let event">
+
+                            <div class="event-name">
+
+                                <mat-icon>
+                                    {{ event.severity === 'Critical'
+                                    ? 'warning'
+                                    : 'security' }}
+                                </mat-icon>
+
+                                <span>
+                                    {{ event.event }}
+                                </span>
+
+                            </div>
+
+                        </td>
+
+                    </ng-container>
+
+
+                    <!-- Source -->
+
+                    <ng-container matColumnDef="source">
+
+                        <th mat-header-cell *matHeaderCellDef>
+                            Source IP
+                        </th>
+
+                        <td mat-cell *matCellDef="let event">
+
+                            <code>
+                {{ event.source }}
+              </code>
+
+                        </td>
+
+                    </ng-container>
+
+
+                    <!-- User -->
+
+                    <ng-container matColumnDef="user">
+
+                        <th mat-header-cell *matHeaderCellDef>
+                            User
+                        </th>
+
+                        <td mat-cell *matCellDef="let event">
+                            {{ event.user }}
+                        </td>
+
+                    </ng-container>
+
+
+                    <!-- Severity -->
+
+                    <ng-container matColumnDef="severity">
+
+                        <th mat-header-cell *matHeaderCellDef>
+                            Severity
+                        </th>
+
+                        <td mat-cell *matCellDef="let event">
+
+                            <span class="severity" [class]="event.severity.toLowerCase()">
+
+                                {{ event.severity }}
+
+                            </span>
+
+                        </td>
+
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns">
+                    </tr>
+
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </mat-card-content>
+
+    </mat-card>
+
+</div>
