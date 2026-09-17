@@ -1,0 +1,348 @@
+.incidents {
+  padding: 32px;
+  color: #e5e7eb;
+}
+
+.incidents-card {
+  background: #111827 !important;
+
+  border: 1px solid #1e293b;
+  border-radius: 10px !important;
+
+  box-shadow: none !important;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 16px;
+}
+
+.search-box {
+  width: 380px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  background: #0f172a;
+  border: 1px solid #263449;
+  border-radius: 7px;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.search-box:hover {
+  border-color: #334155;
+}
+
+.search-box:focus-within {
+  border-color: #0284c7;
+
+  box-shadow:
+    0 0 0 2px rgba(14, 165, 233, 0.08);
+}
+
+.search-box mat-icon {
+  width: 18px;
+  height: 18px;
+
+  color: #64748b;
+
+  font-size: 18px;
+}
+
+.search-box input {
+  flex: 1;
+
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #e2e8f0;
+
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.search-box input::placeholder {
+  color: #64748b;
+}
+
+.search-shortcut {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #334155;
+  border-radius: 4px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.filter-button {
+  height: 40px !important;
+
+  display: flex !important;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 14px !important;
+
+  border-color: #263449 !important;
+  border-radius: 7px !important;
+
+  background: #0f172a !important;
+
+  color: #94a3b8 !important;
+
+  font-size: 13px;
+}
+
+.filter-button:hover {
+  background: #172033 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+.filter-button mat-icon {
+  width: 18px;
+  height: 18px;
+
+  font-size: 18px;
+}
+
+.table-container {
+  overflow-x: auto;
+
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  background: #111827;
+}
+
+th {
+  background: #0f172a !important;
+
+  color: #64748b !important;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+td {
+  color: #cbd5e1 !important;
+
+  border-bottom-color: #1e293b !important;
+
+  font-size: 13px;
+}
+
+tr:hover {
+  background: #172033;
+}
+
+.incident-name {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.incident-name strong {
+  display: block;
+
+  color: #e5e7eb;
+
+  font-size: 13px;
+}
+
+.incident-name span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.severity-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+}
+
+.severity-dot.critical {
+  background: #ef4444;
+}
+
+.severity-dot.high {
+  background: #f97316;
+}
+
+.severity-dot.medium {
+  background: #facc15;
+}
+
+.severity-dot.low {
+  background: #22c55e;
+}
+
+code {
+  color: #38bdf8;
+
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.risk {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.risk strong {
+  min-width: 24px;
+}
+
+.risk-bar {
+  width: 60px;
+  height: 4px;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  background: #1e293b;
+}
+
+.risk-progress {
+  height: 100%;
+
+  border-radius: 4px;
+
+  background: #38bdf8;
+}
+
+.severity {
+  display: inline-block;
+
+  min-width: 58px;
+
+  padding: 5px 8px;
+
+  border-radius: 5px;
+
+  text-align: center;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.severity.critical {
+  background: #451a1a;
+  color: #f87171;
+}
+
+.severity.high {
+  background: #431407;
+  color: #fb923c;
+}
+
+.severity.medium {
+  background: #422006;
+  color: #fbbf24;
+}
+
+.severity.low {
+  background: #052e16;
+  color: #4ade80;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+}
+
+.status.open {
+  color: #f87171;
+}
+
+.status.open .status-dot {
+  background: #ef4444;
+}
+
+.status.investigating {
+  color: #fbbf24;
+}
+
+.status.investigating .status-dot {
+  background: #facc15;
+}
+
+.status.resolved {
+  color: #4ade80;
+}
+
+.status.resolved .status-dot {
+  background: #22c55e;
+}
+
+@media (max-width: 800px) {
+
+  .incidents {
+    padding: 18px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+}
