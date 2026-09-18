@@ -1,0 +1,305 @@
+.ai-analysis {
+  padding: 32px;
+  color: #e5e7eb;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.page-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.analyze-button {
+  height: 40px !important;
+  display: flex !important;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px !important;
+  border-radius: 7px !important;
+  background: #0284c7 !important;
+  color: #f8fafc !important;
+  font-size: 12px;
+}
+
+.analyze-button:hover {
+  background: #0369a1 !important;
+}
+
+.analyze-button mat-icon {
+  width: 17px;
+  height: 17px;
+  font-size: 17px;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 18px;
+}
+
+.analysis-card {
+  background: #111827 !important;
+  border: 1px solid #1e293b;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.card-header p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.analysis-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 18px;
+  border-bottom: 1px solid #1e293b;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.analysis-item:last-child {
+  border-bottom: none;
+}
+
+.analysis-item:hover {
+  background: #172033;
+}
+
+.analysis-item.active {
+  background: #0f2235;
+  border-left: 2px solid #0284c7;
+  padding-left: 16px;
+}
+
+.analysis-item-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.analysis-item-main div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.analysis-item strong {
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.analysis-item span {
+  color: #64748b;
+  font-size: 10px;
+}
+
+.severity-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.severity-dot.critical {
+  background: #ef4444;
+}
+
+.severity-dot.high {
+  background: #f97316;
+}
+
+.confidence {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.confidence strong {
+  color: #38bdf8;
+  font-size: 12px;
+}
+
+.confidence span {
+  color: #64748b;
+  font-size: 9px;
+}
+
+.result-card {
+  min-height: 400px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status.analyzed {
+  color: #4ade80;
+}
+
+.status.analyzed .status-dot {
+  background: #22c55e;
+}
+
+.status.pending {
+  color: #fbbf24;
+}
+
+.status.pending .status-dot {
+  background: #facc15;
+}
+
+.assessment {
+  padding: 20px;
+}
+
+.assessment-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.assessment-title div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.assessment-title strong {
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.assessment-title span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.confidence-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 7px;
+}
+
+.confidence-box span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.confidence-box strong {
+  color: #38bdf8;
+  font-size: 18px;
+}
+
+.assessment-section {
+  margin-top: 20px;
+}
+
+.assessment-section h4 {
+  margin: 0 0 8px;
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.assessment-section p {
+  margin: 0;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.recommendation {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 9px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.recommendation mat-icon {
+  width: 16px;
+  height: 16px;
+  color: #38bdf8;
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .ai-analysis {
+    padding: 18px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .analyze-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,1 +1,132 @@
-<p>ai-analysis works!</p>
+<div class="ai-analysis">
+
+  <div class="page-header">
+    <div>
+      <h2>AI Analysis</h2>
+      <p>Use AI to analyze security events and identify potential threats.</p>
+    </div>
+
+    <button mat-flat-button class="analyze-button" (click)="runAnalysis()">
+      <mat-icon>auto_awesome</mat-icon>
+      Run Analysis
+    </button>
+  </div>
+
+  <div class="analysis-grid">
+
+    <mat-card class="analysis-card analysis-list">
+
+      <div class="card-header">
+        <div>
+          <h3>Recent Analyses</h3>
+          <p>Security events analyzed by the AI engine.</p>
+        </div>
+      </div>
+
+      <div class="analysis-items">
+
+        @for (analysis of analyses; track analysis.event) {
+          <div
+            class="analysis-item"
+            [class.active]="selectedAnalysis === analysis"
+            (click)="selectAnalysis(analysis)"
+          >
+
+            <div class="analysis-item-main">
+              <span
+                class="severity-dot"
+                [class.critical]="analysis.severity === 'Critical'"
+                [class.high]="analysis.severity === 'High'"
+              ></span>
+
+              <div>
+                <strong>{{ analysis.event }}</strong>
+                <span>{{ analysis.source }} · {{ analysis.time }}</span>
+              </div>
+            </div>
+
+            <div class="confidence">
+              <strong>{{ analysis.confidence }}%</strong>
+              <span>confidence</span>
+            </div>
+
+          </div>
+        }
+
+      </div>
+
+    </mat-card>
+
+    <mat-card class="analysis-card result-card">
+
+      <div class="card-header">
+        <div>
+          <h3>AI Assessment</h3>
+          <p>Analysis result for selected security event.</p>
+        </div>
+
+        <span
+          class="status"
+          [class.analyzed]="selectedAnalysis.status === 'Analyzed'"
+          [class.pending]="selectedAnalysis.status === 'Pending'"
+        >
+          <span class="status-dot"></span>
+          {{ selectedAnalysis.status }}
+        </span>
+      </div>
+
+      <div class="assessment">
+
+        <div class="assessment-title">
+          <span
+            class="severity-dot"
+            [class.critical]="selectedAnalysis.severity === 'Critical'"
+            [class.high]="selectedAnalysis.severity === 'High'"
+          ></span>
+
+          <div>
+            <strong>{{ selectedAnalysis.event }}</strong>
+            <span>{{ selectedAnalysis.source }}</span>
+          </div>
+        </div>
+
+        <div class="confidence-box">
+          <span>AI Confidence</span>
+          <strong>{{ selectedAnalysis.confidence }}%</strong>
+        </div>
+
+        <div class="assessment-section">
+          <h4>Threat Assessment</h4>
+          <p>
+            The AI engine detected activity that matches patterns commonly
+            associated with malicious behavior. The event should be reviewed
+            together with related authentication and network activity.
+          </p>
+        </div>
+
+        <div class="assessment-section">
+          <h4>Recommended Actions</h4>
+
+          <div class="recommendation">
+            <mat-icon>search</mat-icon>
+            <span>Review related events from the same source.</span>
+          </div>
+
+          <div class="recommendation">
+            <mat-icon>block</mat-icon>
+            <span>Consider temporarily blocking the source if activity continues.</span>
+          </div>
+
+          <div class="recommendation">
+            <mat-icon>security</mat-icon>
+            <span>Investigate affected accounts and authentication logs.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </mat-card>
+
+  </div>
+
+</div>
