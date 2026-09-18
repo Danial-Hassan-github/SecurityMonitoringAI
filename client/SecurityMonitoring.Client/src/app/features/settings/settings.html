@@ -1,1 +1,232 @@
-<p>settings works!</p>
+<div class="settings">
+
+  <div class="page-header">
+    <div>
+      <h2>Settings</h2>
+      <p>Configure security monitoring and platform preferences.</p>
+    </div>
+  </div>
+
+  <!-- Monitoring -->
+
+  <mat-card class="settings-card">
+
+    <mat-card-content>
+
+      <div class="section-header">
+        <div class="section-icon">
+          <mat-icon>monitor_heart</mat-icon>
+        </div>
+
+        <div>
+          <h3>Monitoring</h3>
+          <p>Configure how security events are monitored.</p>
+        </div>
+      </div>
+
+      <div class="settings-list">
+
+        <div class="setting-row">
+
+          <div class="setting-info">
+            <span class="setting-title">Auto Refresh</span>
+            <span class="setting-description">
+              Automatically refresh security data.
+            </span>
+          </div>
+
+          <mat-slide-toggle [(ngModel)]="autoRefresh">
+          </mat-slide-toggle>
+
+        </div>
+
+        <div class="setting-row">
+
+          <div class="setting-info">
+            <span class="setting-title">AI Threat Analysis</span>
+            <span class="setting-description">
+              Automatically analyze detected threats using AI.
+            </span>
+          </div>
+
+          <mat-slide-toggle [(ngModel)]="aiAnalysis">
+          </mat-slide-toggle>
+
+        </div>
+
+        <div class="setting-row">
+
+          <div class="setting-info">
+            <span class="setting-title">Refresh Interval</span>
+            <span class="setting-description">
+              Frequency for refreshing dashboard data.
+            </span>
+          </div>
+
+          <mat-form-field appearance="outline" class="compact-select">
+            <mat-select [(ngModel)]="refreshInterval">
+
+              <mat-option value="10">10 seconds</mat-option>
+              <mat-option value="30">30 seconds</mat-option>
+              <mat-option value="60">1 minute</mat-option>
+              <mat-option value="300">5 minutes</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+
+  <!-- Notifications -->
+
+  <mat-card class="settings-card">
+
+    <mat-card-content>
+
+      <div class="section-header">
+
+        <div class="section-icon">
+          <mat-icon>notifications</mat-icon>
+        </div>
+
+        <div>
+          <h3>Notifications</h3>
+          <p>Configure security alert notifications.</p>
+        </div>
+
+      </div>
+
+      <div class="settings-list">
+
+        <div class="setting-row">
+
+          <div class="setting-info">
+            <span class="setting-title">Security Notifications</span>
+            <span class="setting-description">
+              Receive notifications when security events are detected.
+            </span>
+          </div>
+
+          <mat-slide-toggle [(ngModel)]="notifications">
+          </mat-slide-toggle>
+
+        </div>
+
+        <div class="setting-row">
+
+          <div class="setting-info">
+            <span class="setting-title">Email Alerts</span>
+            <span class="setting-description">
+              Send critical security alerts through email.
+            </span>
+          </div>
+
+          <mat-slide-toggle [(ngModel)]="emailAlerts">
+          </mat-slide-toggle>
+
+        </div>
+
+        <div class="setting-row">
+
+          <div class="setting-info">
+            <span class="setting-title">Alert Severity</span>
+            <span class="setting-description">
+              Minimum severity level that triggers an alert.
+            </span>
+          </div>
+
+          <mat-form-field appearance="outline" class="compact-select">
+
+            <mat-select [(ngModel)]="severityThreshold">
+
+              <mat-option value="Low">Low</mat-option>
+              <mat-option value="Medium">Medium</mat-option>
+              <mat-option value="High">High</mat-option>
+              <mat-option value="Critical">Critical</mat-option>
+
+            </mat-select>
+
+          </mat-form-field>
+
+        </div>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+
+  <!-- API Configuration -->
+
+  <mat-card class="settings-card">
+
+    <mat-card-content>
+
+      <div class="section-header">
+
+        <div class="section-icon">
+          <mat-icon>dns</mat-icon>
+        </div>
+
+        <div>
+          <h3>API Configuration</h3>
+          <p>Configure the security monitoring API connection.</p>
+        </div>
+
+      </div>
+
+      <div class="api-form">
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>API Endpoint</mat-label>
+
+          <input
+            matInput
+            [(ngModel)]="apiEndpoint"
+          />
+
+        </mat-form-field>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+
+  <!-- Actions -->
+
+  <div class="actions">
+
+    <button
+      mat-stroked-button
+      class="reset-button"
+      type="button"
+      (click)="resetSettings()">
+
+      Reset
+
+    </button>
+
+    <button
+      mat-flat-button
+      class="save-button"
+      type="button"
+      (click)="saveSettings()">
+
+      <mat-icon>save</mat-icon>
+      Save Changes
+
+    </button>
+
+  </div>
+
+</div>

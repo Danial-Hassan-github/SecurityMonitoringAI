@@ -1,0 +1,282 @@
+.settings {
+  padding: 32px;
+  color: #e5e7eb;
+  max-width: 1000px;
+}
+
+.page-header {
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.page-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.settings-card {
+  margin-bottom: 14px;
+
+  background: #111827 !important;
+  border: 1px solid #1e293b;
+  border-radius: 10px !important;
+
+  box-shadow: none !important;
+}
+
+.settings-card mat-card-content {
+  padding: 18px !important;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding-bottom: 13px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.section-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0f172a;
+  border: 1px solid #263449;
+  border-radius: 6px;
+}
+
+.section-icon mat-icon {
+  width: 16px;
+  height: 16px;
+
+  color: #38bdf8;
+  font-size: 16px;
+}
+
+.section-header h3 {
+  margin: 0;
+
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.section-header p {
+  margin: 3px 0 0;
+
+  color: #64748b;
+  font-size: 11px;
+}
+
+
+/* Settings Rows */
+
+.settings-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.setting-row {
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid #1e293b;
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+.setting-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.setting-title {
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.setting-description {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.compact-select {
+  width: 135px;
+  margin: 0;
+}
+
+::ng-deep .compact-select {
+  height: 40px;
+}
+
+::ng-deep .compact-select .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+::ng-deep .compact-select .mat-mdc-text-field-wrapper {
+  height: 40px !important;
+  background: #0f172a;
+  border-radius: 7px;
+}
+
+::ng-deep .compact-select .mat-mdc-form-field-flex {
+  height: 40px !important;
+}
+
+::ng-deep .compact-select .mat-mdc-form-field-infix {
+  min-height: 40px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+::ng-deep .compact-select .mat-mdc-select-value {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+::ng-deep .compact-select .mat-mdc-select-arrow {
+  color: #64748b;
+}
+
+.api-form {
+  padding-top: 16px;
+}
+
+.api-form mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .api-form .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+::ng-deep .api-form .mat-mdc-text-field-wrapper {
+  height: 40px !important;
+  background: #0f172a;
+  border-radius: 7px;
+}
+
+::ng-deep .api-form .mat-mdc-form-field-flex {
+  height: 40px !important;
+}
+
+::ng-deep .api-form .mat-mdc-form-field-infix {
+  min-height: 40px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+::ng-deep .api-form input {
+  color: #0284c7 !important;
+  font-size: 12px;
+}
+
+::ng-deep .setting-row .mat-mdc-slide-toggle {
+  transform: scale(0.82);
+  transform-origin: right center;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+
+  margin-top: 16px;
+}
+
+.reset-button {
+  height: 40px !important;
+
+  padding: 0 14px !important;
+
+  border-color: #263449 !important;
+  border-radius: 7px !important;
+
+  background: #0f172a !important;
+
+  color: #94a3b8 !important;
+
+  font-size: 12px;
+}
+
+.reset-button:hover {
+  background: #172033 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+.save-button {
+  height: 40px !important;
+
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+
+  padding: 0 14px !important;
+
+  border-radius: 7px !important;
+
+  background: #0284c7 !important;
+  color: #f8fafc !important;
+
+  font-size: 12px;
+}
+
+.save-button:hover {
+  background: #0369a1 !important;
+}
+
+.save-button mat-icon {
+  width: 16px;
+  height: 16px;
+
+  font-size: 16px;
+}
+
+@media (max-width: 800px) {
+
+  .settings {
+    padding: 18px;
+  }
+
+  .setting-row {
+    min-height: 52px;
+  }
+
+  .setting-description {
+    max-width: 250px;
+  }
+
+  .compact-select {
+    width: 120px;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+}

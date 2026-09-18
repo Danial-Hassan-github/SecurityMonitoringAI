@@ -1,35 +1,40 @@
 <div class="incidents">
 
+  <div class="page-header">
+    <div>
+      <h2>Incidents</h2>
+      <p>Investigate and manage detected security incidents.</p>
+    </div>
+  </div>
+
   <mat-card class="incidents-card">
 
     <mat-card-content>
 
       <div class="toolbar">
 
-                <div class="search-box">
-                    <mat-icon>search</mat-icon>
+        <div class="search-box">
+          <mat-icon>search</mat-icon>
 
-                    <input type="text" placeholder="Incident, IP, severity, status..." (input)="searchIncidents($event)" />
+          <input type="text" placeholder="Incident, IP, severity, status..." (input)="searchIncidents($event)" />
 
-                    <span class="search-shortcut">/</span>
-                </div>
+          <span class="search-shortcut">/</span>
+        </div>
 
 
-                <button class="filter-button" mat-stroked-button type="button">
+        <button class="filter-button" mat-stroked-button type="button">
 
-                    <mat-icon>tune</mat-icon>
-                    Filters
+          <mat-icon>tune</mat-icon>
+          Filters
 
-                </button>
+        </button>
 
-            </div>
+      </div>
 
 
       <div class="table-container">
 
-        <table
-          mat-table
-          [dataSource]="filteredIncidents">
+        <table mat-table [dataSource]="filteredIncidents">
 
           <ng-container matColumnDef="incident">
 
@@ -41,9 +46,7 @@
 
               <div class="incident-name">
 
-                <div
-                  class="severity-dot"
-                  [class]="incident.severity.toLowerCase()">
+                <div class="severity-dot" [class]="incident.severity.toLowerCase()">
                 </div>
 
                 <div>
@@ -94,9 +97,7 @@
 
                 <div class="risk-bar">
 
-                  <div
-                    class="risk-progress"
-                    [style.width.%]="incident.risk">
+                  <div class="risk-progress" [style.width.%]="incident.risk">
                   </div>
 
                 </div>
@@ -115,9 +116,7 @@
 
             <td mat-cell *matCellDef="let incident">
 
-              <span
-                class="severity"
-                [class]="incident.severity.toLowerCase()">
+              <span class="severity" [class]="incident.severity.toLowerCase()">
 
                 {{ incident.severity }}
 
@@ -135,9 +134,7 @@
 
             <td mat-cell *matCellDef="let incident">
 
-              <span
-                class="status"
-                [class]="incident.status.toLowerCase()">
+              <span class="status" [class]="incident.status.toLowerCase()">
 
                 <span class="status-dot"></span>
 
@@ -164,14 +161,10 @@
           </ng-container>
 
 
-          <tr
-            mat-header-row
-            *matHeaderRowDef="displayedColumns">
+          <tr mat-header-row *matHeaderRowDef="displayedColumns">
           </tr>
 
-          <tr
-            mat-row
-            *matRowDef="let row; columns: displayedColumns;">
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;">
           </tr>
 
         </table>

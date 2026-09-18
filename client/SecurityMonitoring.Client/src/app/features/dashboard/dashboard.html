@@ -1,28 +1,31 @@
 <div class="dashboard">
+  <div class="page-header">
+    <div>
+      <h2>Dashboard</h2>
+      <p>Monitor security activity and get an overview of your security posture.</p>
+    </div>
+  </div>
 
-  <!-- Statistics -->
   <section class="stats-grid">
 
     @for (stat of stats; track stat.label) {
-      <mat-card class="stat-card" [class]="stat.type">
+    <mat-card class="stat-card" [class]="stat.type">
 
-        <mat-card-content>
-          <div class="stat-label">
-            {{ stat.label }}
-          </div>
+      <mat-card-content>
+        <div class="stat-label">
+          {{ stat.label }}
+        </div>
 
-          <div class="stat-value">
-            {{ stat.value }}
-          </div>
-        </mat-card-content>
+        <div class="stat-value">
+          {{ stat.value }}
+        </div>
+      </mat-card-content>
 
-      </mat-card>
+    </mat-card>
     }
 
   </section>
 
-
-  <!-- Activity + Threat Summary -->
   <section class="content-grid">
 
     <mat-card class="panel activity-panel">
@@ -38,26 +41,13 @@
 
         <div class="chart-placeholder">
 
-          <svg
-            class="security-chart"
-            viewBox="0 0 800 220"
-            preserveAspectRatio="none">
+          <svg class="security-chart" viewBox="0 0 800 220" preserveAspectRatio="none">
 
-            <polyline
-              points="0,165 80,145 160,155 240,95 320,120 400,65 480,105 560,45 640,80 720,30 800,55"
-              fill="none"
-              stroke="#38bdf8"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round" />
+            <polyline points="0,165 80,145 160,155 240,95 320,120 400,65 480,105 560,45 640,80 720,30 800,55"
+              fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 
-            <polyline
-              points="0,165 80,145 160,155 240,95 320,120 400,65 480,105 560,45 640,80 720,30 800,55"
-              fill="none"
-              stroke="#38bdf8"
-              stroke-width="12"
-              opacity="0.08"
-              stroke-linecap="round"
+            <polyline points="0,165 80,145 160,155 240,95 320,120 400,65 480,105 560,45 640,80 720,30 800,55"
+              fill="none" stroke="#38bdf8" stroke-width="12" opacity="0.08" stroke-linecap="round"
               stroke-linejoin="round" />
 
           </svg>
@@ -106,8 +96,6 @@
 
   </section>
 
-
-  <!-- Recent Incidents -->
   <mat-card class="panel incidents-panel">
 
     <mat-card-header>
@@ -121,9 +109,7 @@
           </mat-card-subtitle>
         </div>
 
-        <button
-          mat-stroked-button
-          type="button">
+        <button mat-stroked-button type="button">
           View All
         </button>
 
@@ -138,47 +124,43 @@
 
         @for (incident of incidents; track incident.title) {
 
-          <div class="incident">
+        <div class="incident">
 
-            <div class="incident-info">
+          <div class="incident-info">
 
-              <div
-                class="severity-dot"
-                [class]="incident.severity.toLowerCase()">
-              </div>
-
-              <div>
-                <h3>{{ incident.title }}</h3>
-
-                <p>
-                  Source: {{ incident.source }}
-                  · {{ incident.time }}
-                </p>
-              </div>
-
+            <div class="severity-dot" [class]="incident.severity.toLowerCase()">
             </div>
 
+            <div>
+              <h3>{{ incident.title }}</h3>
 
-            <div class="incident-risk">
-
-              <span>Risk Score</span>
-
-              <strong>
-                {{ incident.risk }}
-              </strong>
-
-            </div>
-
-
-            <div
-              class="severity"
-              [class]="incident.severity.toLowerCase()">
-
-              {{ incident.severity }}
-
+              <p>
+                Source: {{ incident.source }}
+                · {{ incident.time }}
+              </p>
             </div>
 
           </div>
+
+
+          <div class="incident-risk">
+
+            <span>Risk Score</span>
+
+            <strong>
+              {{ incident.risk }}
+            </strong>
+
+          </div>
+
+
+          <div class="severity" [class]="incident.severity.toLowerCase()">
+
+            {{ incident.severity }}
+
+          </div>
+
+        </div>
 
         }
 
