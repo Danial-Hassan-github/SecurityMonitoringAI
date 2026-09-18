@@ -1,1 +1,153 @@
-<p>threats works!</p>
+<div class="threats">
+
+  <mat-card class="threats-card">
+    <mat-card-content>
+
+      <div class="toolbar">
+
+                <div class="search-box">
+                    <mat-icon>search</mat-icon>
+
+                    <input type="text" placeholder="Search events, IPs, users..." (input)="filterThreats()" />
+
+                    <span class="search-shortcut">/</span>
+                </div>
+
+
+                <button class="filter-button" mat-stroked-button type="button">
+
+                    <mat-icon>tune</mat-icon>
+                    Filters
+
+                </button>
+
+            </div>
+
+
+      <div class="table-container">
+
+        <table mat-table [dataSource]="filteredThreats">
+
+          <!-- Threat -->
+          <ng-container matColumnDef="threat">
+            <th mat-header-cell *matHeaderCellDef>
+              Threat
+            </th>
+
+            <td mat-cell *matCellDef="let threat">
+              {{ threat.threat }}
+            </td>
+          </ng-container>
+
+
+          <!-- Category -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef>
+              Category
+            </th>
+
+            <td mat-cell *matCellDef="let threat">
+              {{ threat.category }}
+            </td>
+          </ng-container>
+
+
+          <!-- Source -->
+          <ng-container matColumnDef="source">
+            <th mat-header-cell *matHeaderCellDef>
+              Source IP
+            </th>
+
+            <td mat-cell *matCellDef="let threat">
+              {{ threat.source }}
+            </td>
+          </ng-container>
+
+
+          <!-- Severity -->
+          <ng-container matColumnDef="severity">
+            <th mat-header-cell *matHeaderCellDef>
+              Severity
+            </th>
+
+            <td mat-cell *matCellDef="let threat">
+
+              <span
+                class="severity"
+                [ngClass]="threat.severity.toLowerCase()">
+
+                {{ threat.severity }}
+
+              </span>
+
+            </td>
+          </ng-container>
+
+
+          <!-- Confidence -->
+          <ng-container matColumnDef="confidence">
+            <th mat-header-cell *matHeaderCellDef>
+              Confidence
+            </th>
+
+            <td mat-cell *matCellDef="let threat">
+
+              <div class="confidence-cell">
+
+                <span>{{ threat.confidence }}%</span>
+
+                <div class="confidence-bar">
+                  <div
+                    class="confidence-fill"
+                    [style.width.%]="threat.confidence">
+                  </div>
+                </div>
+
+              </div>
+
+            </td>
+          </ng-container>
+
+
+          <!-- Occurrences -->
+          <ng-container matColumnDef="occurrences">
+            <th mat-header-cell *matHeaderCellDef>
+              Occurrences
+            </th>
+
+            <td mat-cell *matCellDef="let threat">
+              {{ threat.occurrences }}
+            </td>
+          </ng-container>
+
+
+          <!-- Last Detected -->
+          <ng-container matColumnDef="lastDetected">
+            <th mat-header-cell *matHeaderCellDef>
+              Last Detected
+            </th>
+
+            <td mat-cell *matCellDef="let threat">
+              {{ threat.lastDetected }}
+            </td>
+          </ng-container>
+
+
+          <tr
+            mat-header-row
+            *matHeaderRowDef="displayedColumns">
+          </tr>
+
+          <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns">
+          </tr>
+
+        </table>
+
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
