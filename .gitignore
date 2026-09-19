@@ -55,3 +55,4 @@ Thumbs.db
 
 # Coverage
 coverage/
+/api/SecurityMonitoringAI.API/SecurityMonitoringAI.API/appsettings.json
