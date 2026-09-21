@@ -8,7 +8,6 @@
   </div>
 
   <mat-card class="incidents-card">
-
     <mat-card-content>
 
       <div class="toolbar">
@@ -16,26 +15,34 @@
         <div class="search-box">
           <mat-icon>search</mat-icon>
 
-          <input type="text" placeholder="Incident, IP, severity, status..." (input)="searchIncidents($event)" />
+          <input
+            type="text"
+            placeholder="Incident, IP, severity, status..."
+            (input)="searchIncidents($event)"
+          />
 
           <span class="search-shortcut">/</span>
         </div>
 
-
-        <button class="filter-button" mat-stroked-button type="button">
-
+        <button
+          class="filter-button"
+          mat-stroked-button
+          type="button"
+        >
           <mat-icon>tune</mat-icon>
           Filters
-
         </button>
 
       </div>
 
-
       <div class="table-container">
 
-        <table mat-table [dataSource]="filteredIncidents">
+        <table
+          mat-table
+          [dataSource]="filteredIncidents"
+        >
 
+          <!-- Incident -->
           <ng-container matColumnDef="incident">
 
             <th mat-header-cell *matHeaderCellDef>
@@ -46,17 +53,21 @@
 
               <div class="incident-name">
 
-                <div class="severity-dot" [class]="incident.severity.toLowerCase()">
-                </div>
+                <div
+                  class="severity-dot"
+                  [class]="incident.severity.toLowerCase()"
+                ></div>
 
                 <div>
+
                   <strong>
-                    {{ incident.incident }}
+                    {{ incident.title }}
                   </strong>
 
                   <span>
-                    Security Detection
+                    {{ incident.description }}
                   </span>
+
                 </div>
 
               </div>
@@ -65,6 +76,8 @@
 
           </ng-container>
 
+
+          <!-- Source IP -->
           <ng-container matColumnDef="source">
 
             <th mat-header-cell *matHeaderCellDef>
@@ -81,6 +94,8 @@
 
           </ng-container>
 
+
+          <!-- Risk Score -->
           <ng-container matColumnDef="risk">
 
             <th mat-header-cell *matHeaderCellDef>
@@ -92,13 +107,15 @@
               <div class="risk">
 
                 <strong>
-                  {{ incident.risk }}
+                  {{ incident.riskScore }}
                 </strong>
 
                 <div class="risk-bar">
 
-                  <div class="risk-progress" [style.width.%]="incident.risk">
-                  </div>
+                  <div
+                    class="risk-progress"
+                    [style.width.%]="incident.riskScore"
+                  ></div>
 
                 </div>
 
@@ -108,6 +125,8 @@
 
           </ng-container>
 
+
+          <!-- Severity -->
           <ng-container matColumnDef="severity">
 
             <th mat-header-cell *matHeaderCellDef>
@@ -116,16 +135,19 @@
 
             <td mat-cell *matCellDef="let incident">
 
-              <span class="severity" [class]="incident.severity.toLowerCase()">
-
+              <span
+                class="severity"
+                [class]="incident.severity.toLowerCase()"
+              >
                 {{ incident.severity }}
-
               </span>
 
             </td>
 
           </ng-container>
 
+
+          <!-- Status -->
           <ng-container matColumnDef="status">
 
             <th mat-header-cell *matHeaderCellDef>
@@ -134,7 +156,10 @@
 
             <td mat-cell *matCellDef="let incident">
 
-              <span class="status" [class]="incident.status.toLowerCase()">
+              <span
+                class="status"
+                [class]="incident.status.toLowerCase()"
+              >
 
                 <span class="status-dot"></span>
 
@@ -146,6 +171,8 @@
 
           </ng-container>
 
+
+          <!-- Created At -->
           <ng-container matColumnDef="time">
 
             <th mat-header-cell *matHeaderCellDef>
@@ -154,25 +181,29 @@
 
             <td mat-cell *matCellDef="let incident">
 
-              {{ incident.time }}
+              {{ incident.createdAt | date:'medium' }}
 
             </td>
 
           </ng-container>
 
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns">
-          </tr>
+          <!-- Table Rows -->
+          <tr
+            mat-header-row
+            *matHeaderRowDef="displayedColumns"
+          ></tr>
 
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-          </tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns;"
+          ></tr>
 
         </table>
 
       </div>
 
     </mat-card-content>
-
   </mat-card>
 
 </div>

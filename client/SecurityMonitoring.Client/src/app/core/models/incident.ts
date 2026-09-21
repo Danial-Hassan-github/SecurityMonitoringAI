@@ -1,6 +1,6 @@
 export interface Incident {
   id: number;
-  incident: string;
+  title: string;
   description: string;
   source: string;
   riskScore: number;
