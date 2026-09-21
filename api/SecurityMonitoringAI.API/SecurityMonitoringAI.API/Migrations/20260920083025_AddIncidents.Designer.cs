@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SecurityMonitoring.Api.Data;
@@ -11,9 +12,11 @@ using SecurityMonitoring.Api.Data;
 namespace SecurityMonitoringAI.API.Migrations
 {
     [DbContext(typeof(SecurityMonitoringDbContext))]
-    partial class SecurityMonitoringDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260920083025_AddIncidents")]
+    partial class AddIncidents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,14 +43,7 @@ namespace SecurityMonitoringAI.API.Migrations
                     b.Property<DateTime?>("ResolvedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("RiskScore")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Severity")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Source")
                         .IsRequired()
                         .HasColumnType("text");
 

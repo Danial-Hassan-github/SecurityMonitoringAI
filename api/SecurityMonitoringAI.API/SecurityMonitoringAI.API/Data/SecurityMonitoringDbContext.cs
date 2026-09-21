@@ -12,4 +12,5 @@ public class SecurityMonitoringDbContext : DbContext
     }
 
     public DbSet<SecurityEvent> SecurityEvents => Set<SecurityEvent>();
+    public DbSet<Incident> Incidents => Set<Incident>();
 }
