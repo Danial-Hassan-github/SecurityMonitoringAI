@@ -6,7 +6,19 @@ public class SecurityEvent
 
     public DateTime Timestamp { get; set; }
 
+    public string SourceType { get; set; } = string.Empty;
+
     public string SourceIp { get; set; } = string.Empty;
+
+    public string? DestinationIp { get; set; }
+
+    public int? SourcePort { get; set; }
+
+    public int? DestinationPort { get; set; }
+
+    public string? Protocol { get; set; }
+
+    public int? EventId { get; set; }
 
     public string EventType { get; set; } = string.Empty;
 
