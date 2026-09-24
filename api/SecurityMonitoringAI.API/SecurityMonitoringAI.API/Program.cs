@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SecurityMonitoring.Api.Data;
+using SecurityMonitoring.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,8 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddSingleton<WindowsEventLogService>();
+builder.Services.AddHostedService<WindowsEventLogWorker>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
