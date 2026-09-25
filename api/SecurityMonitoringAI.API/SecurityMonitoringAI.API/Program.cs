@@ -25,6 +25,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddSingleton<WindowsEventLogService>();
 builder.Services.AddHostedService<WindowsEventLogWorker>();
+builder.Services.AddSingleton<NetworkLogService>();
+builder.Services.AddHostedService<NetworkLogWorker>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
